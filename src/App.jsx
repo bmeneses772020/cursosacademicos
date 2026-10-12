@@ -34,14 +34,20 @@ const COURSES = [
     href: "https://cursoexpresionescrita.vercel.app/",
     status: "disponible",
   },
-];
-
-const UPCOMING = [
   {
     id: "metodologia",
     title: "Metodología de la Investigación para Docentes y Futuros Tutores",
-    description: "Fundamentos y decisiones metodológicas para investigar con rigor y orientar tesis y proyectos de grado: enfoques, problema, diseño, validez, análisis y tutoría.",
+    description:
+      "Domina las decisiones metodológicas y orienta tesis y proyectos de grado: enfoques, problema y objetivos, literatura, diseño, muestra, instrumentos, análisis y tutoría.",
+    price: "$5 USD",
+    duration: "5 horas",
+    modules: "7 módulos",
+    href: "https://cursotutorestfg.vercel.app/",
+    status: "disponible",
   },
+];
+
+const UPCOMING = [
   {
     id: "estadistica",
     title: "Estadística Descriptiva Aplicada",
