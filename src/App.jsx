@@ -13,14 +13,25 @@ import {
 /* ============================================================ */
 const COURSES = [
   {
-    id: "ficha-apa",
-    title: "Ficha APA",
+    id: "apa-7",
+    title: "APA 7",
     description:
       "Aprende a citar y referenciar con normas APA 7.ª edición: fundamentos, formato, encabezados, citas, referencias, y tablas y figuras.",
     price: "$5 USD",
     duration: "2–3 horas",
     modules: "6 módulos",
     href: "https://aprendecursoapa.vercel.app/",
+    status: "disponible",
+  },
+  {
+    id: "expresion-escrita",
+    title: "Expresión Escrita y Comprensión Lectora",
+    description:
+      "Mejora tu redacción y tu comprensión lectora: párrafos, gramática, lectura activa, resumen y edición de textos.",
+    price: "$5 USD",
+    duration: "2–3 horas",
+    modules: "6 módulos",
+    href: "https://cursoexpresionescrita.vercel.app/",
     status: "disponible",
   },
 ];
