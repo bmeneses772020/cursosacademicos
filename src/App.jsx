@@ -39,8 +39,8 @@ const COURSES = [
 const UPCOMING = [
   {
     id: "metodologia",
-    title: "Metodología de la Investigación Científica",
-    description: "Los fundamentos para plantear y desarrollar un trabajo de investigación, paso a paso.",
+    title: "Metodología de la Investigación para Docentes y Futuros Tutores",
+    description: "Fundamentos y decisiones metodológicas para investigar con rigor y orientar tesis y proyectos de grado: enfoques, problema, diseño, validez, análisis y tutoría.",
   },
   {
     id: "estadistica",
