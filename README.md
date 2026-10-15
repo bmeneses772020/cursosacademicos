@@ -1,55 +1,35 @@
-# Ficha Cursos
+# Cursos Educación Continua
 
-Vitrina de cursos — "Tus NOOC de autogestión académica". Muestra tarjetas de tus cursos disponibles (cada una enlaza al sitio independiente de ese curso) y tarjetas de "Próximamente" para los que estás preparando.
+Página-ruta para los talleres de formación continua: reúne tus tres cursos de autogestión y **los desbloquea en orden** (APA 7 → Expresión Escrita y Comprensión Lectora → Metodología de la Investigación). No cobra nada: cada curso se abre desde aquí con un **código de acceso** que tú entregas a los participantes.
 
 ## Cómo funciona
 
-Este sitio **no contiene el contenido de los cursos** — solo los presenta y enlaza a ellos. Cada curso (como Ficha APA) sigue siendo su propio proyecto independiente, publicado por separado en Vercel.
+1. Desde esta página, cada participante pulsa «Entrar al curso». Se abre el curso con la dirección `…?ec=1`, que activa el **modo Educación Continua**: sin precio ni QR de pago, solo la pantalla de código de acceso.
+2. Al terminar el 100 % de las lecciones, el curso muestra el botón «Volver y desbloquear el siguiente», que regresa a esta página con una marca de finalización.
+3. Esta página valida la marca, guarda el avance **en el navegador** y desbloquea el siguiente curso.
 
-## Cómo agregar un curso nuevo cuando esté listo
+## Códigos de acceso para los talleres
 
-1. Construye el curso nuevo como un proyecto aparte (usa `ficha-apa-project` como plantilla: cópialo, cambia el contenido de `src/App.jsx`, tu QR y tus datos en `src/Landing.jsx`, y el código de acceso en `src/Gate.jsx`).
-2. Sube ese proyecto a un repositorio de GitHub nuevo y despliégalo en Vercel (mismo proceso que ya hiciste con Ficha APA). Obtendrás un enlace propio, por ejemplo `curso-metodologia.vercel.app`.
-3. Abre `src/App.jsx` de **este** proyecto (Ficha Cursos) y mueve la tarjeta correspondiente desde la lista `UPCOMING` hacia la lista `COURSES`, completando sus datos:
+Cada curso acepta, además de su código de venta, un código propio para Educación Continua (se cambian en `src/Gate.jsx` de cada curso, lista `VALID_CODES`):
 
-   ```js
-   {
-     id: "metodologia",
-     title: "Metodología de la Investigación Científica",
-     description: "...",
-     price: "$5 USD",
-     duration: "2–3 horas",
-     modules: "6 módulos",
-     href: "https://curso-metodologia.vercel.app/",
-     status: "disponible",
-   },
-   ```
+| Curso | Código |
+| --- | --- |
+| APA 7 | `EDUCON-APA7` |
+| Expresión Escrita y Comprensión Lectora | `EDUCON-REDACCION` |
+| Metodología de la Investigación | `EDUCON-METODOLOGIA` |
 
-4. Sube el cambio a GitHub — Vercel republica automáticamente la vitrina.
+## Importante
 
-## Cómo quitar o agregar tarjetas de "Próximamente"
+- **Es un candado simple, no seguridad bancaria.** El código y la marca de finalización están del lado del navegador: sirven para ordenar la ruta, y una persona con conocimientos técnicos podría saltárselos. Para un taller con docentes es suficiente.
+- El avance se guarda **por navegador**. En un laboratorio compartido, el botón «Reiniciar mi progreso» deja el equipo listo para otra persona.
+- La dirección de esta página debe ser `https://cursoseducacioncontinua.vercel.app/` (nombre del proyecto en Vercel: `cursoseducacioncontinua`), porque los cursos regresan a esa dirección. Si usas otra, cámbiala en `HUB_URL` del archivo `src/ec.js` de cada curso.
+- Si cambias el orden o agregas cursos, edita `COURSES` en `src/App.jsx`. El texto `SALT` debe ser idéntico al de `src/ec.js` en los cursos.
 
-Edita la lista `UPCOMING` en `src/App.jsx`: agrega, quita o cambia el `title` y `description` de cada una. No necesitan `href` todavía, porque no son clicables.
+## Cómo publicarla
 
-## Requisitos
-
-- [Node.js](https://nodejs.org) versión 18 o superior.
-
-## Cómo correrlo en tu computadora
-
-```
-npm install
-npm run dev
-```
-
-Abre la dirección que aparezca en la terminal (normalmente `http://localhost:5173`).
-
-## Cómo publicarlo en internet (gratis)
-
-1. Sube esta carpeta a un repositorio de GitHub nuevo (por ejemplo, `ficha-cursos`).
-2. Entra a [vercel.com](https://vercel.com), inicia sesión con tu cuenta de GitHub, "Add New Project" → importa el repositorio.
-3. Deja la configuración automática y haz clic en "Deploy".
-4. Obtendrás un enlace público, por ejemplo `ficha-cursos.vercel.app` — ese es el que compartes como tu vitrina general.
+1. Sube el contenido de esta carpeta a un repositorio nuevo de GitHub (sin `node_modules` ni `dist`).
+2. En vercel.com, «Add New Project» → importa el repositorio y, en el nombre del proyecto, escribe `cursoseducacioncontinua`.
+3. Pulsa «Deploy».
 
 ## Autora
 
